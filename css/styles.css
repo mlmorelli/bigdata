@@ -384,11 +384,11 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  font-size: 1.25rem;
+  font-size: 1.00rem;
 }
 
 h6, .h6 {
-  font-size: 1rem;
+  font-size: 0.5rem;
 }
 
 .lead {
@@ -10217,7 +10217,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to Top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../assets/img/shutterstock_451509736.jpg");
+  background: linear-gradient(to Top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../assets/img/nonosciudan.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;

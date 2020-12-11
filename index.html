@@ -219,14 +219,14 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Landing Page</a>
+                <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top">Landing Page</a> -->
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#map">Explore the Data!</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#map">Explore the Reports!</a></li>
                     </ul>
                 </div>
             </div>
@@ -237,6 +237,9 @@
                 <div class="mx-auto text-center">
                     <h1 class="mx-auto my-0 text-uppercase">Sexual  <br>  Violence</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">Mexico City 2019</h2>
+                    <h6 class="text-white-50 mx-auto mt-1 mb-1">In 2017 Mexico City was declared the 4th most dangerous city for women regarding sexual violence.  This is reflected in the increasing number of feminicides and the continous protests from feminist groups.
+This website will allow you to explore the 2019 reports on sexual violence from the research files of the General Prosecutor of Justice (Fiscalía General de Justicia) of Mexico City .
+By clicking on “Explore the Reports” you will be able to read and look at the reports as best suits you. However, we ask all users to use this information cautiously. Sexual violence is an offense that is commonly underreported. This dataset will help you understand why this is an important issue to be addressed. Just bare in mind that there are many other cases who didn’t make it to the map.</h6>
                   <!--   <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a> -->
                 </div>
             </div>
@@ -249,7 +252,7 @@
             <div class="row">
                 <div class="column"> <!-- TODO: change class -->
                     <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Background information</h2>
+                        <!-- <h2 class="text-white mb-4">Background information</h2> -->
                         <div>
                           <!-- Menu -->
                           <nav id="menu">
@@ -287,7 +290,7 @@
                         </div>
 
                         <div id="myDiagram" class= "diagram">
-                          <h6 id="diagramtitle">Official reports of harassment by women in 2019: </h6>
+                          <h5 id="diagramtitle">Official reports of harassment by women in 2019: </h5>
                           <iframe src="Diagrams/harassment_gender.html" width="460" height="300" class="gender" style= "border:none" overflow= "hidden" ></iframe>
                           <iframe src="Diagrams/harassment_age.html" width="460" height="300" class="age" style= "border:none"  overflow= "hidden" ></iframe>
                           <iframe src="Diagrams/harassment_month.html" width="460" height="300" class="month" style= "border:none" overflow= "hidden" ></iframe>
@@ -295,7 +298,7 @@
 
                         </div>
                         <div id="myDiagramA" class= "diagram">
-                          <h6 id="diagramtitle">Official reports of abuse by women in 2019: </h6>
+                          <h5 id="diagramtitle">Official reports of abuse by women in 2019: </h5>
                           <iframe src="Diagrams/abuse_gender.html" width="460" height="300" class="gender" style= "border:none" overflow= "hidden" ></iframe>
                           <iframe src="Diagrams/abuse_age.html" width="460" height="300" class="age" style= "border:none"  overflow= "hidden" ></iframe>
                           <iframe src="Diagrams/abuse_month.html" width="460" height="300" class="month" style= "border:none" overflow= "hidden" ></iframe>
@@ -304,7 +307,7 @@
                         </div>
 
                         <div id="myDiagramR" class= "diagram">
-                          <h6 id="diagramtitle">Official reports of rape by women in 2019: </h6>
+                          <h5 id="diagramtitle">Official reports of rape by women in 2019: </h5>
                           <iframe src="Diagrams/rape_gender.html" width="460" height="300" class="gender" style= "border:none" overflow= "hidden" ></iframe>
                           <iframe src="Diagrams/rape_age.html" width="460" height="300" class="age" style= "border:none"  overflow= "hidden" ></iframe>
                           <iframe src="Diagrams/rape_month.html" width="460" height="300" class="month" style= "border:none" overflow= "hidden" ></iframe>
@@ -325,8 +328,7 @@
 			  <div class="column_3" style = "float: right; width: 33%; z-index: 10;">
 			  	    <button type="button" class="collapsible2" >Explore Harassment Reports</button>
                                 <div class="content2">
-                                  <p style="padding-top: 5px">1322 reports by women in 2019.</p>
-                                  <p>  Definition: Someone commits sexual harassment when they repeatedly besiege a person with lust purposes, taking advantage of any circumstance which puts the victim in disadvantage, undefensedness or imminent risk.</p>
+                                  <p style="padding-top: 5px">1322 reports by women in 2019. <br> <br> Definition: Someone commits sexual harassment when they repeatedly besiege a person with lust purposes, taking advantage of any circumstance which puts the victim in disadvantage, undefensedness or imminent risk.</p>
                                   <div>
                                   <button class="button1" onClick="displayDiagramHG()">By Gender</button>
                                   <button class="button1" onClick="displayDiagramHA()">By Age</button>
@@ -339,8 +341,7 @@
 			  <div class="column_3" style = "float: right; width: 33%;z-index: 10;">
 			  	<button type="button" class="collapsible3">Explore Abuse Reports</button>
 			  	<div class="content3">
-                                    <p style="padding-top: 5px">5264 reports by women in 2019.</p>
-                                    <p>Definition: Someone commits sexual abuse when, without consent from a person and without aiming for sexual intercourse, they force a person to either observe or do a sexual act.
+                                    <p style="padding-top: 5px">5264 reports by women in 2019. <br> <br> Definition: Someone commits sexual abuse when, without consent from a person and without aiming for sexual intercourse, they force a person to either observe or do a sexual act.
                                     </p>
                                     <div>
                                       <button class="button2" onClick="displayDiagramAG()">By Gender</button>
@@ -354,8 +355,7 @@
 			  <div class="column_3" style = "float: right; width: 33%;z-index: 10;">
 			  	<button type="button" class="collapsible4">Explore Rape Reports</button>
 			  		<div class="content4">
-			  			<p style="padding-top: 5px">1583 reports by women in 2019.</p>
-                <p>Definition: Someone commits rape when through physical or moral violence they have sexual intercourse with another person without this person’s consent. </p>
+			  			<p style="padding-top: 5px">1583 reports by women in 2019. <br> <br> Definition: Someone commits rape when through physical or moral violence they have sexual intercourse with another person without this person’s consent. </p>
                 </p>
               <div>
                 <button class="button3" onClick="displayDiagramRG()">By Gender</button>
