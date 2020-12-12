@@ -330,10 +330,11 @@ By clicking on “Explore the Reports” you will be able to read and look at th
                                 <div class="content2">
                                   <p style="padding-top: 5px">1322 reports by women in 2019. <br> <br> Definition: Someone commits sexual harassment when they repeatedly besiege a person with lust purposes, taking advantage of any circumstance which puts the victim in disadvantage, undefensedness or imminent risk.</p>
                                   <div>
-                                  <button class="button1" onClick="displayDiagramHG()">By Gender</button>
-                                  <button class="button1" onClick="displayDiagramHA()">By Age</button>
-                                  <button class="button1" onClick="displayDiagramHM()">By Month</button>
-                                  <button class="button1" onClick="displayDiagramHT()">By Time</button>
+                                    <button class="button1" id="H_toggle" onClick="ToggleLayerH()">Hide</button>
+                                    <button class="button1" onClick="displayDiagramHG()">By Gender</button>
+                                    <button class="button1" onClick="displayDiagramHA()">By Age</button>
+                                    <button class="button1" onClick="displayDiagramHM()">By Month</button>
+                                    <button class="button1" onClick="displayDiagramHT()">By Time</button>
                                   </div>
                                 </div>
 			  </div>
@@ -344,6 +345,7 @@ By clicking on “Explore the Reports” you will be able to read and look at th
                                     <p style="padding-top: 5px">5264 reports by women in 2019. <br> <br> Definition: Someone commits sexual abuse when, without consent from a person and without aiming for sexual intercourse, they force a person to either observe or do a sexual act.
                                     </p>
                                     <div>
+                                      <button class="button2" id="A_toggle" onClick="ToggleLayerA()">Hide</button>
                                       <button class="button2" onClick="displayDiagramAG()">By Gender</button>
                                       <button class="button2" onClick="displayDiagramAA()">By Age</button>
                                       <button class="button2" onClick="displayDiagramAM()">By Month</button>
@@ -358,6 +360,7 @@ By clicking on “Explore the Reports” you will be able to read and look at th
 			  			<p style="padding-top: 5px">1583 reports by women in 2019. <br> <br> Definition: Someone commits rape when through physical or moral violence they have sexual intercourse with another person without this person’s consent. </p>
                 </p>
               <div>
+                <button class="button3" id="R_toggle" onClick="ToggleLayerR()">Hide</button>
                 <button class="button3" onClick="displayDiagramRG()">By Gender</button>
                 <button class="button3" onClick="displayDiagramRA()">By Age</button>
                 <button class="button3" onClick="displayDiagramRM()">By Month</button>
@@ -390,8 +393,70 @@ By clicking on “Explore the Reports” you will be able to read and look at th
         var filterGroup = document.getElementById('filter-group');
 
         var map = new mapboxgl.Map({
-        	container: 'map',
-        	style: 'mapbox://styles/yujing6/cki70w2oy456t1apc0xi4rlj8'
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        zoom: 10,
+        center: [-99.155,19.434]
+        });
+        
+        map.on('load', function () {
+        map.addSource('harassment', {
+        type: 'vector',
+        url: 'mapbox://yujing6.0p6dviet'
+        });
+        map.addLayer({
+        'id': 'harassment-reports',
+        'type': 'circle',
+        'source': 'harassment',
+        'source-layer': 'harassment_data-ctufpr',
+        'layout': {
+                    // make layer visible by default
+                        'visibility': 'visible'
+                    },
+        'paint': {
+            'circle-radius': 4,
+            'circle-color': '#543eac',
+            'circle-opacity': 0.7
+        }
+        });
+        map.addSource('rape', {
+        type: 'vector',
+        url: 'mapbox://yujing6.0u53gitm'
+        });
+        map.addLayer({
+        'id': 'rape-reports',
+        'type': 'circle',
+        'source': 'rape',
+        'source-layer': 'victimas-en-carpetas-de-inves-505c04',
+        'layout': {
+                    // make layer visible by default
+                        'visibility': 'visible'
+                    },
+        'paint': {
+            'circle-radius': 4,
+            'circle-color': '#171954',
+            'circle-opacity': 0.7
+        }
+        });
+        map.addSource('abuse', {
+        type: 'vector',
+        url: 'mapbox://yujing6.crwypdj4'
+        });
+        map.addLayer({
+        'id': 'abuse-reports',
+        'type': 'circle',
+        'source': 'abuse',
+        'source-layer': 'victimas-en-carpetas-de-inves-crev87',
+        'layout': {
+                    // make layer visible by default
+                        'visibility': 'visible'
+                    },
+        'paint': {
+            'circle-radius': 4,
+            'circle-color': '#c149a1',
+            'circle-opacity': 0.7
+        }
+        });
         });
 
 
@@ -469,18 +534,49 @@ By clicking on “Explore the Reports” you will be able to read and look at th
           });
         }
 
-        var btn = document.getElementsByClassName('button1');
 
+/*Toggle data layers*/
+        function ToggleLayerH(){
+            var visibility= map.getLayoutProperty('harassment-reports','visibility');
+            if (visibility==='visible'){
+                map.setLayoutProperty('harassment-reports', 'visibility','none');
+                var btn = document.getElementById('H_toggle');
+                btn.textContent="Display"
+            } else{
+                map.setLayoutProperty('harassment-reports', 'visibility','visible');
+                var btn = document.getElementById('H_toggle');
+                btn.textContent="Hide"
+            }
+        };
+        function ToggleLayerR(){
+            var visibility= map.getLayoutProperty('rape-reports','visibility');
+            if (visibility==='visible'){
+                map.setLayoutProperty('rape-reports', 'visibility','none');
+                var btn = document.getElementById('R_toggle');
+                btn.textContent="Display"
+            } else{
+                map.setLayoutProperty('rape-reports', 'visibility','visible');
+                var btn = document.getElementById('R_toggle');
+                btn.textContent="Hide"
+            }
+        };
+        function ToggleLayerA(){
+            var visibility= map.getLayoutProperty('abuse-reports','visibility');
+            if (visibility==='visible'){
+                map.setLayoutProperty('abuse-reports', 'visibility','none');
+                var btn = document.getElementById('A_toggle');
+                btn.textContent="Display"
+            } else{
+                map.setLayoutProperty('abuse-reports', 'visibility','visible');
+                var btn = document.getElementById('A_toggle');
+                btn.textContent="Hide"
+            }
+        };
         var age_graph=document.getElementsByClassName("age")
         var gender_graph=document.getElementsByClassName("gender")
         var month_graph=document.getElementsByClassName("month")
         var time_graph=document.getElementsByClassName("time")
 
-        /*btn.onclick=function(){
-          for (var i=0;i<mydiagram.length;i+=1){
-              mydiagram[i].style.display = 'block';
-          }
-        }*/
         var mydiagram=document.getElementById('myDiagram')
         var mydiagramA=document.getElementById('myDiagramA')
         var mydiagramR=document.getElementById('myDiagramR')
