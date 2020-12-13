@@ -10268,7 +10268,7 @@ body {
 
 .about-section-reverse-gradient {
   padding-top: 10rem;
-  background: linear-gradient(to top, #000000 0%, rgba(0, 0, 0, 0.9) 40%, #4C4C4C 90%);
+  background: linear-gradient(to top, #000000 0%, rgba(0, 0, 0, 0.9) 40%, #4C4C4C 50%);
 }
 .about-section p {
   margin-bottom: 5rem;
