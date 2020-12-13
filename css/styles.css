@@ -2463,13 +2463,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
+  font-family: Inconsolata, sans-sans-serif;
   color: #fff;
-  background-color: #64a19d;
-  border-color: #64a19d;
+  background-color: #000000;
+  border-color: #000000;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #548b87;
+  background-color: #4C4C4C;
   border-color: #4f837f;
 }
 .btn-primary:focus, .btn-primary.focus {
