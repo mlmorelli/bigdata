@@ -10000,6 +10000,13 @@ a.text-black:hover, a.text-black:focus {
   color: #FFFFFF !important;
 }
 
+.text-white-medium {
+  font-family: 'Gentium Basic', serif;
+  font-size: 1.1rem;
+  line-height: 2.5rem;
+  color: #FFFFFF !important;
+}
+
 .text-hide {
   font: 0/0 a;
   color: transparent;
