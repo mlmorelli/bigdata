@@ -380,7 +380,7 @@ By clicking on “Explore the Reports” you will be able to read and look at th
           zoom: 10,
           center: [-99.155,19.434]
         });
-        
+
         map.on('load', function () {
           map.addSource('harassment', {
             type: 'vector',
@@ -697,6 +697,18 @@ By clicking on “Explore the Reports” you will be able to read and look at th
               time_graph[i].style.display='block';
           }
         }
+
+        <!-- header scroll -->
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("mainNav").style.top = "0";
+            } else {
+              document.getElementById("mainNav").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+      }
 
         </script>
 
